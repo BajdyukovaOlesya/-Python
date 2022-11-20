@@ -8,4 +8,6 @@ import random
 x=np.random.randint(0, 100, size=10000)
 y=np.prod(x);
 print(y)
+y=np.median(x)
+print(y)
 
