@@ -11,14 +11,17 @@ class Bird(Animal):
     def what(self):
         return f'{self.name} says {self.sound}'
        
+print("-Class function")
+
 bird=Bird('titmouse','tweet-tweet')
 print(bird.what())
-
+print("-Serialization")
 json_string = json.dumps(bird, default=lambda obj: obj.__dict__,sort_keys=True,indent=4)
 print(json_string)
 
 def ld(d):
     return Bird(d['name'],d['sound'])
+print("-Deserialization")
 
 bird=json.loads(json_string, object_hook=ld)
 print(bird.what())
